@@ -60,8 +60,10 @@ class ODBTC():
 
             d = (temp * k) + gsMin
 
-            block_image[i][block_image[i] >= d] = 1
-            block_image[i][block_image[i] < d] = 0
+
+
+            block_image[i][block_image[i] >= d] = max
+            block_image[i][block_image[i] < d] = min
 
         block_image = np.concatenate(block_image)
         block_image = np.split(block_image, x)
